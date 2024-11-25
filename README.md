@@ -5001,3 +5001,168 @@ const Header = () => {
 }
 
 ```
+
+
+
+## Additionals explications
+
+# Liste des Dépendances et Leur Utilité
+
+## 1. axios@1.4.0
+**Description :** Axios est une bibliothèque JavaScript permettant de faire des requêtes HTTP (GET, POST, PUT, DELETE, etc.) depuis un navigateur ou un environnement Node.js.  
+**Utilité :** Simplifie la communication avec des API ou des serveurs, avec un support intégré pour les promesses (*Promise*) et la gestion des erreurs.  
+
+**Exemple d'utilisation :**
+```javascript
+import axios from 'axios';
+
+axios.get('https://api.example.com/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## 2. dayjs@1.11.9
+
+**Description :**  
+Une bibliothèque JavaScript légère pour manipuler et formater les dates.
+
+**Utilité :**  
+Fournit des fonctionnalités similaires à Moment.js, mais avec un encombrement beaucoup plus léger (~2kB).
+
+**Exemple d'utilisation :**
+```javascript
+import dayjs from 'dayjs';
+
+const now = dayjs();
+console.log(now.format('YYYY-MM-DD')); // Formatage de la date
+```
+
+## 3. @reduxjs/toolkit@1.9.5
+
+**Description :**  
+Un outil officiel pour simplifier l'utilisation de Redux, une bibliothèque de gestion d'état dans les applications React.
+
+**Utilité :**  
+- Réduit la configuration répétitive de Redux.  
+- Fournit des utilitaires comme `createSlice`, `createAsyncThunk`, et `configureStore` pour structurer facilement votre état global.
+
+**Exemple d'utilisation :**
+```javascript
+import { createSlice, configureStore } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: state => { state.value += 1; },
+    decrement: state => { state.value -= 1; }
+  }
+});
+
+const store = configureStore({ reducer: counterSlice.reducer });
+```
+
+## 4. @tanstack/react-query@4.32.6
+
+**Description :**  
+Une bibliothèque pour la gestion des requêtes et du cache dans les applications React.
+
+**Utilité :**  
+Simplifie le chargement, la mise en cache, et la synchronisation des données à partir d'APIs.
+
+**Exemple d'utilisation :**  
+```javascript
+import { useQuery } from '@tanstack/react-query';
+
+const { data, isLoading, error } = useQuery(['data'], fetchData);
+
+function fetchData() {
+  return fetch('/api/data').then(res => res.json());
+}
+```
+
+## 5. @tanstack/react-query-devtools@4.32.6
+
+**Description :**  
+Un outil complémentaire à React Query pour déboguer facilement les requêtes dans vos applications React.
+
+**Utilité :**  
+Affiche dans le navigateur un panneau interactif pour examiner l'état des requêtes, leur cache, et plus.
+
+**Exemple d'utilisation :**
+```javascript
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+<ReactQueryDevtools initialIsOpen={false} />;
+```
+
+## 6. react-icons@4.10.1
+
+**Description :**  
+Une bibliothèque contenant des icônes populaires pour React (Font Awesome, Material Design Icons, etc.).
+
+**Utilité :**  
+Permet d'utiliser des icônes directement dans les composants React sans avoir à importer manuellement les SVG ou CSS.
+
+**Exemple d'utilisation :**
+```javascript
+import { FaBeer } from 'react-icons/fa';
+
+const App = () => <FaBeer />;
+```
+
+## 7. react-redux@8.1.2
+
+**Description :** La bibliothèque officielle pour connecter Redux avec React.  
+
+**Utilité :**  
+- Fournit le composant `Provider` pour rendre le *store* accessible dans une application React.  
+- Fournit les hooks comme `useSelector` et `useDispatch` pour lire et modifier l'état global.  
+
+**Exemple d'utilisation :**  
+```javascript
+import { Provider } from 'react-redux';
+import store from './store';
+
+<Provider store={store}>
+  <App />
+</Provider>;
+```
+
+## 8. react-router-dom@6.14.2
+
+**Description :**  
+Une bibliothèque pour gérer le routage dans les applications React (naviguer entre différentes pages ou vues).  
+
+**Utilité :**  
+Permet de définir des routes, de naviguer entre elles, et de gérer des paramètres d’URL.  
+
+**Exemple d'utilisation :**
+```javascript
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
+</BrowserRouter>;
+```
+
+## 9. react-toastify@9.1.3
+
+**Description :**  
+Une bibliothèque pour afficher des notifications ou des "toasts" dans les applications React.
+
+**Utilité :**  
+Fournit des notifications élégantes et personnalisables pour informer l'utilisateur.
+
+**Exemple d'utilisation :**
+```javascript
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.success('Success message!');
+
+<ToastContainer />;
+```
