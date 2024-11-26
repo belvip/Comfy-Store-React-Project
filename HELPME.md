@@ -196,3 +196,47 @@ This component enhances the user experience by providing clear, friendly, and vi
 
 ---
 
+# Explanation of the `FormInput` Component
+
+This `FormInput` component is a **functional React component** that renders a styled input field with a label. Below is a breakdown of its functionality and features:
+
+---
+
+## **Code Breakdown**
+
+### **Component Declaration**
+
+```javascript
+const FormInput = ({ label, name, type, defaultValue }) => {
+    return (
+
+        <div className="form-control">
+
+            <label className="label">
+                <span className="label-text">{label}</span>
+            </label>
+
+            <input 
+                type={type} 
+                name={name}
+                defaultValue={defaultValue} 
+                className="input input-bordered" 
+            />
+
+        </div>
+    );
+}
+```
+
+## Overview
+`FormInput` is a **functional component** in React.
+
+## Parameters
+This component accepts four parameters:
+
+- **`label`**: Text displayed for the input's label.
+- **`name`**: Specifies the `name` attribute for the input field.
+- **`type`**: Defines the `type` attribute of the input (e.g., `text`, `password`, etc.).
+- **`defaultValue`**: Sets the initial value of the input field.
+
+
