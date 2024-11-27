@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import hero1 from '../assets/hero1.webp';
 import hero2 from '../assets/hero2.webp';
@@ -42,9 +43,17 @@ const Hero = () => {
             </div>
 
             {/* Carousel Section */}
-            <div className='h-[28rem] lg:carousel carousel-center p-4 space-x-4 bg-neutral rounded-box flex flex-col items-center'>
-                {/* Display the current image */}
-                <div className='carousel-item'>
+            <div className='relative h-[28rem] lg:carousel p-4 bg-neutral rounded-box'>
+                {/* Left Chevron */}
+                <button
+                    className='absolute top-1/2 left-4 transform -translate-y-1/2 z-10 bg-opacity-50 p-2 rounded-full bg-black text-white hover:bg-opacity-75'
+                    onClick={handlePrevious}
+                >
+                    <FaChevronLeft size={24} />
+                </button>
+
+                {/* Image Display */}
+                <div className='carousel-item flex justify-center'>
                     <img
                         src={carouselImages[currentImageIndex]}
                         alt='Hero'
@@ -52,21 +61,13 @@ const Hero = () => {
                     />
                 </div>
 
-                {/* Buttons under the carousel */}
-                <div className='flex mt-4 space-x-4'>
-                    <button
-                        className='btn btn-outline btn-secondary'
-                        onClick={handlePrevious}
-                    >
-                        Previous
-                    </button>
-                    <button
-                        className='btn btn-outline btn-secondary'
-                        onClick={handleNext}
-                    >
-                        Next
-                    </button>
-                </div>
+                {/* Right Chevron */}
+                <button
+                    className='absolute top-1/2 right-4 transform -translate-y-1/2 z-10 bg-opacity-50 p-2 rounded-full bg-black text-white hover:bg-opacity-75'
+                    onClick={handleNext}
+                >
+                    <FaChevronRight size={24} />
+                </button>
             </div>
         </div>
     );
