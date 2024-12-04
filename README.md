@@ -1135,7 +1135,7 @@ const Hero = () => {
 };
 export default Hero;
 ```
-
+ 
 ## Challenge (18) - Axios Custom Instance
 
 - explore api

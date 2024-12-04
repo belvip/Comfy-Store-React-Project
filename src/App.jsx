@@ -14,6 +14,12 @@ import {
   SingleProduct 
 } from './pages';
 
+import { ErrorElement } from './components';
+
+// loaders
+import { loader as landingLoader } from './pages/Landing';
+// actions
+
 // Setup react router
 const router = createBrowserRouter([
   {
@@ -23,14 +29,16 @@ const router = createBrowserRouter([
     children:[
       {
         index:true,
-        element: <Landing/>
+        element: <Landing/>,
+        errorElement: <ErrorElement />,
+        loader:landingLoader,
       },
       {
-        path: '/product',
+        path: '/products',
         element: <Products />,
       },
       {
-        path: '/product/:id',
+        path: '/products/:id',
         element: <SingleProduct />,
       },
       {
