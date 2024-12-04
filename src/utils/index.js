@@ -10,3 +10,17 @@ export const customFetch = axios.create({
 export const customFetchCountries = axios.create({
     baseURL: countries,
 });
+
+export const formatPrice = (price, conversionRate = 620) => {
+    // Convert the price from dollars to FCFA
+        const fcfaPrice = price * conversionRate;
+    
+        // Format the FCFA price
+        const fcfaAmount = new Intl.NumberFormat('fr-FR', {
+        style: 'currency',
+        currency: 'XOF', // ISO code for Franc CFA
+        }).format((fcfaPrice / 100).toFixed(2));
+    
+        return fcfaAmount;
+};
+
