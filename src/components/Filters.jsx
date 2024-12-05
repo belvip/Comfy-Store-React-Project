@@ -3,6 +3,7 @@ import { Form, useLoaderData, Link } from 'react-router-dom';
 import FormInput from './FormInput'; 
 import FormSelect from './FormSelect';
 import FormRange from './FormRange';
+import FormCheckbox from './FormCheckbox';
 
 // Define the Filters component
 const Filters = () => {
@@ -56,6 +57,12 @@ const Filters = () => {
 
             {/* PRICE */}
             <FormRange name='price' label='select price' size='range-sm'/>
+
+            {
+            /* SHIPPING */
+            }
+            <FormCheckbox label='free shipping' name='shipping' size='checkbox-sm' />
+
 
 
             {/* SEARCH BUTTON */}
