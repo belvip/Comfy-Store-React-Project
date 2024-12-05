@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
-import { formatPrice, customFetch } from '../utils';
+import { formatPrice, customFetch, generateAmountOptions } from '../utils';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -73,11 +73,14 @@ const SingleProduct = () => {
               value={amount}
               onChange={handleAmount}
             >
-              {[...Array(10)].map((_, index) => (
+
+              {generateAmountOptions(20)}
+              
+              {/*{[...Array(10)].map((_, index) => (
                 <option key={index + 1} value={index + 1}>
                   {index + 1}
                 </option>
-              ))}
+              ))}*/}
             </select>
           </div>
           {/* CART BUTTON */}
