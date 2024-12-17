@@ -21,6 +21,9 @@ import { loader as landingLoader } from './pages/Landing';
 import { loader as singleLoader } from './pages/SingleProduct'
 import { loader as productLoader } from './pages/Products'
 // actions
+import { action as registerAction } from './pages/Register';
+
+
 
 // Setup react router
 const router = createBrowserRouter([
@@ -74,6 +77,7 @@ const router = createBrowserRouter([
     path: '/register',
     element: <Register />,
     errorElement: <Error />,
+    action: registerAction,
   },
   
 ]);
