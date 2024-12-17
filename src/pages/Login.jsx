@@ -12,6 +12,8 @@ export const action =
         const data = Object.fromEntries(formData);
         try {
         const response = await customFetch.post('/auth/local', data);
+        console.log(response);
+        
 
         store.dispatch(loginUser(response.data));
         toast.success('logged in successfully');

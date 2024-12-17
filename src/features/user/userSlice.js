@@ -6,6 +6,11 @@ const themes = {
     night: 'night',
 };
 
+/*loginUser: (state, action) => {
+    console.log(action.payload);
+  },*/
+
+
 
 const getThemeFromLocalStorage = () => {
     const theme =  localStorage.getItem('theme') || themes.winter;
