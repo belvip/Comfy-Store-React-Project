@@ -22,7 +22,7 @@ import { loader as singleLoader } from './pages/SingleProduct'
 import { loader as productLoader } from './pages/Products'
 // actions
 import { action as registerAction } from './pages/Register';
-
+import { action as loginAction } from './pages/Login';
 
 
 // Setup react router
@@ -72,6 +72,7 @@ const router = createBrowserRouter([
     path: '/login',
     element: <Login />,
     errorElement: <Error />,
+    action: loginAction(store),
   },
   {
     path: '/register',

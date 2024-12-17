@@ -3,6 +3,7 @@ import { FormInput, SubmitBtn } from '../components';
 
 import { customFetch } from '../utils';
 import { toast } from 'react-toastify';
+
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
