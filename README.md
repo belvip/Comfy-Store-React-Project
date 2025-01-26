@@ -30,6 +30,34 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
+- In other hand, we can use this command
+ ```sh
+ npm install tailwindcss@3.4.1 postcss autoprefixer
+```
+
+- Verify the Installation
+```sh
+npm list tailwindcss
+```
+- You should see something like:
+```sh
+resumewebsite@0.0.0 D:\Work-Space-React\resumewebsite
+└── tailwindcss@3.4.1
+```
+
+- Initialize Tailwind CSS
+```sh
+npx tailwindcss init -p
+```
+
+- This should create two files:
+
+```sh
+tailwind.config.js
+
+postcss.config.js
+```
+
 - rename to tailwind.config.cjs
 - add following content
 
